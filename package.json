@@ -48,7 +48,6 @@
     "rc-trigger": "3.0.0",
     "react-onclickoutside": "^6.8.0",
     "react-popper": "^2.2.4",
-    "react-tether": "^2.0.0",
     "react-with-styles": "4.1.0"
   },
   "devDependencies": {
