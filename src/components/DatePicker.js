@@ -5,6 +5,7 @@ import { Popper, Reference, Manager } from 'react-popper'
 import classnames from 'classnames';
 import Calendar from './Calendar';
 import MyTimePicker from './CustomTimePicker';
+import clsx from "clsx"
 
 const outsideClickIgnoreClass = 'ignore--click--outside';
 
@@ -316,7 +317,7 @@ export default class DatePicker extends Component {
     } = this.props;
 
     return (
-      <div ref={ref}>
+      <div ref={ref} className={clsx("heroContainer")}>
         <Calendar
           toggleMode={this.toggleMode}
           ranges={ranges}

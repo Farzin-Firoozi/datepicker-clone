@@ -2,6 +2,16 @@ $greycolor: #777;
 $selectedColor: #4285f4; //337ab7
 $hoverColor: #d6f1ff;
 
+.heroContainer {
+  position: fixed;
+  top:0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: red;
+}
+
 .calendarContainer {
   position: relative;
   border-radius: 4px;
