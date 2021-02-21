@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import momentJalaali from 'moment-jalaali';
-import TetherComponent from 'react-tether';
+import { Popper, Reference, Manager } from 'react-popper'
 import classnames from 'classnames';
 import Calendar from './Calendar';
 import MyTimePicker from './CustomTimePicker';
@@ -284,9 +284,9 @@ export default class DatePicker extends Component {
           name={this.props.name}
           className={`datepicker-input ${className}`}
           type="text"
-          ref={inst => {
-            this.input = inst;
-          }}
+          // ref={inst => {
+          //   this.input = inst;
+          // }}
           onFocus={this.handleFocus.bind(this)}
           onBlur={this.hanldeBlur.bind(this)}
           onChange={this.handleInputChange.bind(this)}
@@ -369,22 +369,15 @@ export default class DatePicker extends Component {
     const { isOpen } = this.state;
 
     return (
-      <TetherComponent
-        ref={tether => (this.tether = tether)}
-        attachment={this.props.tetherAttachment ? this.props.tetherAttachment : 'top center'}
-        constraints={[
-          {
-            to: 'window',
-            attachment: 'together'
-          }
-        ]}
-        offset="-10px -10px"
-        onResize={() => this.tether && this.tether.position()}
-        /* renderTarget: This is what the item will be tethered to, make sure to attach the ref */
-        renderTarget={ref => this.renderInput(ref)}
-        /* renderElement: If present, this item will be tethered to the the component returned by renderTarget */
-        renderElement={ref => isOpen && this.renderCalendar(ref)}
-      />
+      
+        <Manager>
+          <Reference>
+            {ref =>  this.renderInput(ref)}
+          </Reference>
+          <Popper>
+            {ref => isOpen && this.renderCalendar(ref)}
+          </Popper>
+        </Manager>
     );
   }
 }

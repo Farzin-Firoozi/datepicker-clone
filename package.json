@@ -39,6 +39,7 @@
     "formatcodes": "prettier --write \"./src/**/*.js\""
   },
   "dependencies": {
+    "@popperjs/core": "^2.8.2",
     "classnames": "^2.2.5",
     "lodash.range": "^3.2.0",
     "moment-jalaali": "0.9.1",
@@ -46,6 +47,7 @@
     "prop-types": "^15.7.2",
     "rc-trigger": "3.0.0",
     "react-onclickoutside": "^6.8.0",
+    "react-popper": "^2.2.4",
     "react-tether": "^2.0.0",
     "react-with-styles": "4.1.0"
   },
