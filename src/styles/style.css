@@ -469,7 +469,7 @@ li.rc-time-picker-panel-select-option-disabled:hover {
 }
 
 .today button {
-  border: 3px solid #4285f4 !important;
+  border: 3px solid #3a933b !important;
 }
 
 .jalaali.calendarContainer .selectToday {
@@ -479,7 +479,7 @@ li.rc-time-picker-panel-select-option-disabled:hover {
 .calendarButton {
   display: block;
   width: 100%;
-  background: #4285f4;
+  background: #3a933b;
   color: #fff;
   outline: none;
   border-radius: 5px;

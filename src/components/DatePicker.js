@@ -314,10 +314,11 @@ export default class DatePicker extends Component {
       calendarContainerProps,
       ranges,
       disableYearSelector,
+      heroColor,
     } = this.props;
 
     return (
-      <div ref={ref} className={clsx("heroContainer")}>
+      <div ref={ref} className={clsx("heroContainer")} style={{backgroundColor: heroColor ? heroColor : "#55555526"}}>
         <Calendar
           toggleMode={this.toggleMode}
           ranges={ranges}

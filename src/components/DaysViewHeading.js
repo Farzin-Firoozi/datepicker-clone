@@ -28,13 +28,25 @@ export default class Heading extends Component {
 
     return (
       <div className={styles.heading}>
-        <button className={styles.title} onClick={this.handleMonthClick.bind(this)}>
+        <div className="selects">
+          <select>
+            <option>
+              sadasd
+            </option>
+          </select>
+          <select>
+            <option>
+              sadasd
+            </option>
+          </select>
+        </div>
+        {/* <button className={styles.title} onClick={this.handleMonthClick.bind(this)}>
           {this.props.isGregorian
             ? month.locale('en').format('MMMM YYYY')
             : persianNumber(month.locale('fa').format('jMMMM jYYYY'))}
-        </button>
+        </button> */}
         {this.props.timePicker}
-        {!this.props.isGregorian && (
+        {/* {!this.props.isGregorian && (
           <React.Fragment>
             <button
               type="button"
@@ -51,7 +63,7 @@ export default class Heading extends Component {
               dangerouslySetInnerHTML={leftArrow}
             />
           </React.Fragment>
-        )}
+        )} */}
         {this.props.isGregorian && (
           <React.Fragment>
             <button
