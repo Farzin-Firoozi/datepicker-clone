@@ -317,16 +317,25 @@ export class Calendar extends Component {
         {mode === 'days' && this.renderDays()}
         {mode === 'monthSelector' && this.renderMonthSelector()}
         {mode === 'yearSelector' && this.renderYearSelector()}
-        {showTodayButton && (
+        <hr />
+        <div className="calendar-footer">
           <button
-            type="button"
-            className="calendarButton selectToday"
             onClick={() => this.handleClickOnDay(today)}
             disabled={isTodayDisabled}
           >
-            {isGregorian ? 'today' : 'امروز'}
+            امروز
+            </button>
+          <div>
+            <button>
+              انصراف
           </button>
-        )}
+            <button>
+              تایید
+          </button>
+
+          </div>
+
+        </div>
       </div>
     );
   }

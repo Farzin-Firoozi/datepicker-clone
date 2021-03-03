@@ -1,6 +1,5 @@
-$greycolor: #777;
-$selectedColor:#3a933b;
-$hoverColor: #d6f1ff;
+@import "./variables.scss";
+@import "./calendar-footer.scss";
 
 .heroContainer {
   display: flex;
