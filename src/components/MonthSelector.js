@@ -68,6 +68,7 @@ export default class MonthSelector extends Component {
     const { setMonth, setCalendarMode } = this.context;
     const { isGregorian } = this.props;
     const monthYearFormat = isGregorian ? 'M-YYYY' : 'jM-jYYYY';
+    console.log(key, monthYearFormat);
     setMonth(momentJalaali(key, monthYearFormat));
     setCalendarMode('days');
   }

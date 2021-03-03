@@ -10,6 +10,7 @@ import Day from './Day';
 import { getDaysOfMonth, checkToday } from '../utils/moment-helper';
 import { defaultStyles } from './DefaultStyles';
 import RangeList from '../utils/RangesList';
+import {months} from "../utils/months"
 export class Calendar extends Component {
   static propTypes = {
     min: PropTypes.object,
@@ -129,6 +130,7 @@ export class Calendar extends Component {
   };
 
   nextMonth = () => {
+    
     const { isGregorian } = this.state;
     const monthFormat = isGregorian ? 'Month' : 'jMonth';
 
@@ -213,7 +215,7 @@ export class Calendar extends Component {
 
   renderDays = () => {
     const { month, selectedDay, isGregorian } = this.state;
-    const { children, min, max, styles, outsideClickIgnoreClass } = this.props;
+    const { children, min, max, styles, outsideClickIgnoreClass, years } = this.props;
 
     let days;
 
@@ -236,6 +238,7 @@ export class Calendar extends Component {
           isGregorian={isGregorian}
           styles={styles}
           month={month}
+          years={years}
         />
         <DaysOfWeek styles={styles} isGregorian={isGregorian} />
         <div className={styles.dayPickerContainer}>

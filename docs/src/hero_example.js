@@ -36,6 +36,7 @@ export default class ReactClass extends React.Component {
               this.setState({ value });
             }}
             value={this.state.value}
+            years={[1399, 1400]}
           />
         </div>
         <div style={buttonContainerStyle}>
