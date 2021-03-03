@@ -37,6 +37,7 @@ export default class ReactClass extends React.Component {
             }}
             value={this.state.value}
             years={[1399, 1400]}
+            min={momentJalaali()}
           />
         </div>
         <div style={buttonContainerStyle}>

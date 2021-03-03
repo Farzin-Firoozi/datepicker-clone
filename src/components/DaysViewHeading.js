@@ -44,7 +44,7 @@ export default class Heading extends Component {
 
     const format = "MM-jYYYY"
     const date = moment(month.format("jMM") + "-" + val, format)
-  
+
     setMonth(date)
 
   }
@@ -66,6 +66,15 @@ export default class Heading extends Component {
     return (
       <div className={styles.heading}>
         <div className="selects">
+          <button
+            type="button"
+            title="next month"
+            className={styles.prev}
+            onClick={nextMonth}
+            dangerouslySetInnerHTML={rightArrow}
+          />
+          <div>
+
           <select onChange={e => this.setMonth(e.target.value)}>
             {
               months.map(index => (
@@ -84,6 +93,16 @@ export default class Heading extends Component {
               ))
             }
           </select>
+          </div>
+
+
+          <button
+            type="button"
+            title="previous month"
+            className={styles.next}
+            onClick={prevMonth}
+            dangerouslySetInnerHTML={leftArrow}
+          />
         </div>
         {/* <button className={styles.title} onClick={this.handleMonthClick.bind(this)}>
           {this.props.isGregorian
