@@ -30,7 +30,6 @@ export default class ReactClass extends React.Component {
       <React.Fragment>
         <div>
           <DatePicker
-            timePicker={false}
             isGregorian={this.state.checked}
             onChange={value => {
               this.setState({ value });

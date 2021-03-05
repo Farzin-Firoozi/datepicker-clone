@@ -25,6 +25,10 @@
   text-align: center; 
   padding: 24px;
   background-color: #fff;
+
+  hr {
+    margin: 0.5rem 0;
+  }
 }
 
 .calendarContainer * {
@@ -67,6 +71,9 @@
       width: 30px;
       height: 30px;
       @include transition-text;
+      svg {
+        margin: 0 auto;
+      }
       
       &:hover {
         background-color: $greycolor;
@@ -283,8 +290,7 @@
   border-radius: 4px;
   display: inline-block;
   box-sizing: border-box;
-  width: 110px;
-  border: 1px solid #f7f7f7;
+  width: 100%;
   font-size: 1.2em;
 }
 
@@ -293,8 +299,6 @@
 }
 
 .rc-time-picker-input {
-  margin: 4px 0;
-  padding: 0px 15px 1px 15px;
   direction: ltr;
   text-align: center;
   width: 100%;
@@ -303,18 +307,8 @@
   cursor: pointer;
   font-size: 1em;
   line-height: 1.5;
-
-  border: none;
-  background-image: none;
-  background-color: transparent;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
 }
 
-.jalaali.calendarContainer .rc-time-picker-input {
-  padding: 0px 15px 3px 15px;
-}
 
 .rc-time-picker-input:focus {
   box-shadow: none;
@@ -345,22 +339,16 @@
   font-size: 12px;
   text-align: left;
   background-color: #fff;
-  border-radius: 3px;
-  box-shadow: 0 1px 5px #ccc;
   background-clip: padding-box;
-  border: 1px solid #ccc;
   line-height: 1.5;
 }
 
 .rc-time-picker-panel-input {
   margin: 0;
-  padding: 0;
   width: 100%;
   cursor: default;
   line-height: 1.5;
   outline: 0;
-  border: 1px solid transparent;
-  padding: 4px 0;
   font-size: 1.4em;
   text-align: center;
   font-family: inherit;
