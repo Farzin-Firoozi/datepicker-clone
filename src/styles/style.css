@@ -9,7 +9,7 @@
 }
 
 .calendar-footer button {
-  margin-left: 1px;
+  margin-left: 1rem;
   background-color: transparent;
   color: #3a933b;
   outline: 0;
@@ -38,7 +38,7 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  z-index: 1000;
+  z-index: 1100;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   overflow: hidden;
