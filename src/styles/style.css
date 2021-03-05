@@ -9,7 +9,7 @@
 }
 
 .calendar-footer button {
-  margin-left: 5px;
+  margin-left: 1px;
   background-color: transparent;
   color: #3a933b;
   outline: 0;
@@ -54,6 +54,10 @@
   text-align: center;
   padding: 24px;
   background-color: #fff;
+}
+
+.calendarContainer hr {
+  margin: 0.5rem 0;
 }
 
 .calendarContainer * {
@@ -107,6 +111,10 @@
   height: 30px;
   -webkit-transition: all ease-in-out 0.2s;
   transition: all ease-in-out 0.2s;
+}
+
+.calendarContainer .heading .selects button svg {
+  margin: 0 auto;
 }
 
 .calendarContainer .heading .selects button:hover {
@@ -315,6 +323,7 @@
 }
 
 .rc-time-picker {
+  border-radius: 4px;
   display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -336,13 +345,7 @@
   cursor: pointer;
   font-size: 1em;
   line-height: 1.5;
-  border: none;
-  background-image: none;
-  background-color: transparent;
-  -webkit-box-shadow: none;
-  box-shadow: none;
 }
-
 
 .rc-time-picker-input:focus {
   -webkit-box-shadow: none;
@@ -376,22 +379,16 @@
   font-size: 12px;
   text-align: left;
   background-color: #fff;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 1px 5px #ccc;
-          box-shadow: 0 1px 5px #ccc;
   background-clip: padding-box;
-  border: 1px solid #ccc;
   line-height: 1.5;
 }
 
 .rc-time-picker-panel-input {
   margin: 0;
-  padding: 0;
   width: 100%;
   cursor: default;
   line-height: 1.5;
   outline: 0;
-  border: 1px solid transparent;
   font-size: 1.4em;
   text-align: center;
   font-family: inherit;
