@@ -273,33 +273,42 @@ export default class DatePicker extends Component {
 
   renderInput = ref => {
     const { isOpen, inputValue, isGregorian } = this.state;
+    const { input } = this.props
 
     const className = classnames(this.props.className, {
       [outsideClickIgnoreClass]: isOpen
     });
-
-    return (
-      <div ref={ref}>
-        <input
-          placeholder={this.props.placeholder}
-          name={this.props.name}
-          className={`datepicker-input ${className}`}
-          type="text"
-          // ref={inst => {
-          //   this.input = inst;
-          // }}
-          onFocus={this.handleFocus.bind(this)}
-          onBlur={this.hanldeBlur.bind(this)}
-          onChange={this.handleInputChange.bind(this)}
-          onClick={this.handleInputClick.bind(this)}
-          value={
-            isGregorian || !this.props.persianDigits ? inputValue : this.toPersianDigits(inputValue)
-          }
-          readOnly={this.props.inputReadOnly === true}
-          disabled={this.props.disabled}
-        />
-      </div>
-    );
+    if (input)
+      return input({
+        inputValue,
+        onFocus: this.handleFocus.bind(this),
+        onBlur: this.hanldeBlur.bind(this),
+        onChange: this.handleInputChange.bind(this),
+        onClick: this.handleInputClick.bind(this)
+      })
+    else
+      return (
+        <div ref={ref}>
+          <input
+            placeholder={this.props.placeholder}
+            name={this.props.name}
+            className={`datepicker-input ${className}`}
+            type="text"
+            // ref={inst => {
+            //   this.input = inst;
+            // }}
+            onFocus={this.handleFocus.bind(this)}
+            onBlur={this.hanldeBlur.bind(this)}
+            onChange={this.handleInputChange.bind(this)}
+            onClick={this.handleInputClick.bind(this)}
+            value={
+              isGregorian || !this.props.persianDigits ? inputValue : this.toPersianDigits(inputValue)
+            }
+            readOnly={this.props.inputReadOnly === true}
+            disabled={this.props.disabled}
+          />
+        </div>
+      );
   };
 
   renderCalendar = ref => {
@@ -318,7 +327,7 @@ export default class DatePicker extends Component {
     } = this.props;
 
     return (
-      <div ref={ref} className={clsx("heroContainer")} style={{backgroundColor: heroColor ? heroColor : "#55555526"}}>
+      <div ref={ref} className={clsx("heroContainer")} style={{ backgroundColor: heroColor ? heroColor : "#55555526" }}>
         <Calendar
           toggleMode={this.toggleMode}
           ranges={ranges}
@@ -371,15 +380,15 @@ export default class DatePicker extends Component {
     const { isOpen } = this.state;
 
     return (
-      
-        <Manager>
-          <Reference>
-            {ref =>  this.renderInput(ref)}
-          </Reference>
-          <Popper>
-            {ref => isOpen && this.renderCalendar(ref)}
-          </Popper>
-        </Manager>
+
+      <Manager>
+        <Reference>
+          {ref => this.renderInput(ref)}
+        </Reference>
+        <Popper>
+          {ref => isOpen && this.renderCalendar(ref)}
+        </Popper>
+      </Manager>
     );
   }
 }
