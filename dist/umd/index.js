@@ -2629,8 +2629,15 @@
             isOpen = _this$state.isOpen,
             inputValue = _this$state.inputValue,
             isGregorian = _this$state.isGregorian;
+        var input = _this.props.input;
         var className = classnames(_this.props.className, defineProperty({}, outsideClickIgnoreClass, isOpen));
-        return /*#__PURE__*/React__default.createElement("div", {
+        if (input) return input({
+          inputValue: inputValue,
+          onFocus: _this.handleFocus.bind(assertThisInitialized(_this)),
+          onBlur: _this.hanldeBlur.bind(assertThisInitialized(_this)),
+          onChange: _this.handleInputChange.bind(assertThisInitialized(_this)),
+          onClick: _this.handleInputClick.bind(assertThisInitialized(_this))
+        });else return /*#__PURE__*/React__default.createElement("div", {
           ref: ref
         }, /*#__PURE__*/React__default.createElement("input", {
           placeholder: _this.props.placeholder,
