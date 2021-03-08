@@ -1,5 +1,5 @@
 {
-  "name": "react-datepicker2",
+  "name": "react-datepicker2-clone",
   "version": "v3.3.13",
   "description": "react datepicker component. (include persian jalaali calendar)",
   "main": "dist/umd/index.js",
