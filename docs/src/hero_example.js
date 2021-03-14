@@ -36,7 +36,6 @@ export default class ReactClass extends React.Component {
             }}
             value={this.state.value}
             years={[1399, 1400]}
-            min={momentJalaali()}
             input={ ({inputValue, onClick, onBlur, onFocus}) => <p onClick={onClick}>{inputValue}</p>}
           />
         </div>

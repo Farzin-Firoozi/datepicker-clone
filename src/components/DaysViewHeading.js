@@ -32,7 +32,7 @@ export default class Heading extends Component {
     const { setMonth } = this.context
     const { month } = this.props
 
-    const format = "MM-jYYYY"
+    const format = "jMM-jYYYY"
     const date = moment(String(Number(val) + 1) + "-" + month.format("jYYYY"), format)
     setMonth(date)
 
