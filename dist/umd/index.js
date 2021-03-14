@@ -277,7 +277,7 @@
       value: function setMonth(val) {
         var setMonth = this.context.setMonth;
         var month = this.props.month;
-        var format = "MM-jYYYY";
+        var format = "jMM-jYYYY";
         var date = momentJalaali(String(Number(val) + 1) + "-" + month.format("jYYYY"), format);
         setMonth(date);
       }
